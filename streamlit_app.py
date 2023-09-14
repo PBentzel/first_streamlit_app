@@ -26,6 +26,7 @@ streamlit.dataframe(fruits_to_show)
 # New section to display FruityVice api response
 streamlit.header("Fruityvice Fruit Advice!")
 
+# Text entry box
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
@@ -43,3 +44,7 @@ my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The FRUIT_LOAD_LIST contains:")
 streamlit.dataframe(my_data_rows)
+
+# Text entry box 2
+add_my_fruit = streamlit.text_input('What fruit would you like to add?','jackfruit')
+streamlit.write('Thank you for adding ', add_my_fruit)
