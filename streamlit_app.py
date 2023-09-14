@@ -46,9 +46,6 @@ try:
 except URLError as e:
   streamlit.error
 
-# don't run anything while we troubleshoot
-streamlit.stop()
-
 # query Trial Accountt Metadata
 #my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 #my_cur = my_cnx.cursor()
@@ -65,6 +62,8 @@ def get_fruit_load_list():
 if streamlit.button('Get Fruit Load List'):
    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
    my_data_rows = get_fruit_load_list()
+   # don't run anything while we troubleshoot
+streamlit.stop()
    streamlit.dataframe(my_data_rows)
 
 #old 
